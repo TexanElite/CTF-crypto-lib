@@ -1,6 +1,10 @@
 import math
 
 
+def factorize(n):
+    return trial_division_factorizer(n)
+
+
 def trial_division_factorizer(n):
     factors = []
 
@@ -22,8 +26,10 @@ def trial_division_factorizer(n):
     return factors
 
 
-def mod_inverse(n, mod):
-    return (extended_gcd(n, mod)[1] + mod) % mod
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
 
 
 def extended_gcd(a, b):
@@ -40,6 +46,10 @@ def extended_gcd(a, b):
         r0, s0, t0 = r1, s1, t1
         r1, s1, t1 = r2, s2, t2
     return r0, s0, t0
+
+
+def mod_inverse(n, mod):
+    return (extended_gcd(n, mod)[1] + mod) % mod
 
 
 def bytes_to_long(b):

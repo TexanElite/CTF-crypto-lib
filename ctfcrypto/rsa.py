@@ -18,7 +18,7 @@ class RSA:
         if self.p is None or self.q is None:
             if self.p is None and self.q is None:
                 if n_bits <= 32:
-                    factors = trial_division_factorizer(self.n)
+                    factors = factorize(self.n)
                     if len(factors) != 2:
                         print("Error while updating values: n is not semiprime (n has more than 2 factors)")
                     else:
