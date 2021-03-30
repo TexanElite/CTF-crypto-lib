@@ -1,6 +1,6 @@
 import json
 
-from util import *
+from .util import *
 
 
 class RSA:
@@ -39,7 +39,6 @@ class RSA:
             pt = pt.encode('utf-8')
         pt = bytes_to_long(pt)
         ct = pow(pt, self.e, self.n)
-        print(ct)
         ct = long_to_bytes(ct)
         return ct
 
