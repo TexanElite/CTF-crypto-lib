@@ -48,6 +48,25 @@ def extended_gcd(a, b):
     return r0, s0, t0
 
 
+def isqrt(n):
+    return iroot(n, 2)
+
+
+def iroot(n, e):
+    lo = 0
+    hi = n
+    while lo <= hi:
+        mid = (hi - lo) // 2 + lo
+        guess = mid ** e
+        if guess == n:
+            return mid
+        elif guess < n:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return None
+
+
 def mod_inverse(n, mod):
     return (extended_gcd(n, mod)[1] + mod) % mod
 
