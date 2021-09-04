@@ -1,5 +1,7 @@
 import math
+import string
 
+# MATH FUNCTIONS
 
 def factorize(n):
     return trial_division_factorizer(n)
@@ -77,3 +79,11 @@ def bytes_to_long(b):
 
 def long_to_bytes(n: int):
     return n.to_bytes((n.bit_length() + 7) // 8, 'big')
+
+# STRING FUNCTIONS
+
+def clean_text(text):
+    return ''.join(str(character if character in string.ascii_lowercase else '')
+                   for character in text.lower())
+
+
